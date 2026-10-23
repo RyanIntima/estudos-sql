@@ -9,7 +9,9 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "e2e:playground": "node e2e/playground.mjs",
+    "e2e:game": "node e2e/game.mjs"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.3",

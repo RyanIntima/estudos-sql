@@ -55,6 +55,17 @@ npm run preview  # serve o build
 
 O progresso fica no `localStorage`; o LojaDB e o Playground ficam no IndexedDB do navegador.
 
+## Testes de ponta a ponta (navegador real)
+
+Os scripts em [e2e/](e2e/) dirigem um Chrome headless pelo protocolo CDP (sem dependências extras): digitam no editor, executam e conferem a tela. Com `npm run dev` rodando em outro terminal:
+
+```bash
+npm run e2e:playground   # ~1 min: plano EXPLAIN, aviso de ROLLBACK, views/triggers no diagrama, Impacto, Explicação
+npm run e2e:game         # ~15 min: conclui as 60 aulas pela interface, confere Projeto, Conquistas, exportações e a sincronização
+```
+
+Aceitam a URL como argumento (ex.: o `npm run preview` em `http://localhost:4173/`). Se o Chrome não estiver num local comum, defina `CHROME_PATH`.
+
 ## Stack
 
 React 19 · Vite · TypeScript · Tailwind · Zustand · CodeMirror 6 · React Flow + ELK · PGlite (Postgres 18 em WASM) · libpg-query (parser do Postgres em WASM) · Vitest.
